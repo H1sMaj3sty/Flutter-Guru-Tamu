@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fluttergurutamu/Login_Page/debugprofile.dart';
 import 'package:fluttergurutamu/Login_Page/login.dart';
+import 'package:fluttergurutamu/Login_Page/profile.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -32,7 +36,7 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
       ),
-      home: LoginPage(),
+      home: ProfilePage(),
     );
   }
 }
