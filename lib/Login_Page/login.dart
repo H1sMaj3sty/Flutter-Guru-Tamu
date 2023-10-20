@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:simple_barcode_scanner/simple_barcode_scanner.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,6 +14,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String qresult = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,9 +67,20 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
+                          var res = await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                    const SimpleBarcodeScannerPage()));
+                          if (res is String) {
+                            log("tes : $res");
+                            setState(() {
+                              qresult = res;
+                            });
+                          }
                           Fluttertoast.showToast(
-                              msg: "Halo Dunia",
+                              msg: "Hasil Scan: $res",
                               toastLength: Toast.LENGTH_SHORT,
                               gravity: ToastGravity.BOTTOM,
                               timeInSecForIosWeb: 1,

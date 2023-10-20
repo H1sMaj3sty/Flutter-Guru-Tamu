@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttergurutamu/Login_Page/debugprofile.dart';
+import 'package:fluttergurutamu/Login_Page/drawer_page.dart';
 import 'package:fluttergurutamu/Login_Page/login.dart';
 import 'package:fluttergurutamu/Login_Page/profile.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
       ),
-      home: ProfilePage(),
+      home: DrawerPage(),
     );
   }
 }

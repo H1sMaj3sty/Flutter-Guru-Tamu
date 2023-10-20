@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttergurutamu/Login_Page/drawer_page.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -47,6 +48,8 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                       padding: const EdgeInsets.fromLTRB(8,15,8,8),
                       child: ElevatedButton(
                           onPressed: () {
+                            Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>DrawerPage()));
                             Fluttertoast.showToast(
                                 msg: "Halo Dunia",
                                 toastLength: Toast.LENGTH_SHORT,
